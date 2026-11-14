@@ -1,0 +1,30 @@
+# Bases de datos para desarrollo local:  docker compose up -d
+# Para levantar también el backend:      docker compose --profile full up -d --build
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: ./backend
+    profiles: ["full"]
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/conexion_iot
+      REDIS_URL: redis://redis:6379
+      CORS_ORIGIN: "*"
+    depends_on:
+      - mongo
+      - redis
+
+volumes:
+  mongo-data:

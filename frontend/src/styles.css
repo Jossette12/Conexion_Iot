@@ -1,0 +1,21 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+}
+body { margin: 0; }
+.container { max-width: 960px; margin: 0 auto; padding: 16px; }
+header { display: flex; align-items: center; justify-content: space-between; }
+.status { padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; color: #fff; }
+.status.ok { background: #16a34a; }
+.status.off { background: #9ca3af; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+.card { background: #fff; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 1px 3px rgb(0 0 0 / 0.08); }
+.card-label { color: #6b7280; font-size: 0.9rem; }
+.card-value { font-size: 2rem; font-weight: 600; }
+.card-value small { font-size: 1rem; margin-left: 4px; color: #6b7280; }
+.alert { padding: 10px 14px; border-radius: 8px; margin-bottom: 8px; }
+.alert.ok { background: #dcfce7; color: #166534; }
+.alert.danger { background: #fee2e2; color: #991b1b; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
